@@ -24,12 +24,17 @@ public class MainUI {
                     bankingSystem.createAccount();
                     break;
                 case "2":
-                    loginMenu();
+                    boolean exit = loginMenu();
+                    if (exit) {
+                        System.out.println("Bye!");
+                        bankingSystem.logOut();
+                        return;
+                    }
                     break;
                 case "0":
                     System.out.println("Bye!");
                     bankingSystem.logOut();
-                    System.exit(0);
+                    return;
             }
 
         }
@@ -45,18 +50,18 @@ public class MainUI {
             return false;
         }
         System.out.println("You have successfully logged in!");
-        balanceMenu(account);
-        return true;
+        return balanceMenu(account);
+
     }
 
-    public void balanceMenu(Account account) {
+    public boolean balanceMenu(Account account) {
         while (true) {
             System.out.println("1. Balance\n" +
                     "2. Add income\n" +
                     "3. Do transfer\n" +
                     "4. Close account\n" +
                     "5. Log out\n" +
-                    "6. Exit");
+                    "0. Exit");
             String option = scanner.nextLine();
             switch (option) {
                 case "1":
@@ -88,12 +93,13 @@ public class MainUI {
                 case "4":
                     bankingSystem.closeAccount(account);
                     System.out.println("The account has been closed!\n");
-                    return;
+                    return false;
                 case "5":
                     System.out.println("You have successfully logged out!");
-                    return;
+                    return false;
                 case "0":
-                    return;
+                    bankingSystem.logOut();
+                    return true;
             }
         }
 

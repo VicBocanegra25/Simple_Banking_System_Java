@@ -54,7 +54,7 @@ public class BankingSystem {
             return ReceiverCardStatus.SAME_CARD;
         } else if (!LuhnAlgorithm.isValid(receiverCardNumber)) {
             return ReceiverCardStatus.INVALID_LUHNS;
-        } else if (this.databaseManager.findCard(receiverCardNumber).equals(null)) {
+        } else if (this.databaseManager.findCard(receiverCardNumber) == null) {
             return ReceiverCardStatus.DOES_NOT_EXIST;
         } else {
             return ReceiverCardStatus.VALID;
@@ -63,16 +63,16 @@ public class BankingSystem {
 
     public int transfer(Account account, String receiverAccount) {
         System.out.println("Enter how much money you want to transfer:");
-        int transferAmount = scanner.nextInt();
-        scanner.nextLine();
+        int transferAmount = Integer.parseInt(scanner.nextLine());
         if (transferAmount > account.getBalance()) {
             System.out.println("Not enough money!");
+            return 0;
         } else {
             this.databaseManager.updateBalance(account.getCardNumber(), -transferAmount);
             this.databaseManager.updateBalance(receiverAccount, transferAmount);
             System.out.println("Success!");
-        }
         return transferAmount;
+        }
     }
 
     public enum ReceiverCardStatus {
