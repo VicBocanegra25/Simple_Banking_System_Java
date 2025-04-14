@@ -1,0 +1,40 @@
+type: edu
+files:
+  - name: src/banking/Main.java
+    visible: true
+    learner_created: false
+  - name: src/banking/manager/BankingSystem.java
+    visible: true
+    learner_created: false
+  - name: src/banking/generators/PinGenerator.java
+    visible: true
+    learner_created: false
+  - name: src/banking/generators/CardNumberGenerator.java
+    visible: true
+    learner_created: false
+  - name: src/banking/data_models/Account.java
+    visible: true
+    learner_created: false
+  - name: src/banking/ui/MainUI.java
+    visible: true
+    learner_created: false
+  - name: src/banking/validator/LuhnAlgorithm.java
+    visible: true
+    learner_created: false
+  - name: src/banking/manager/DatabaseManager.java
+    visible: true
+    learner_created: false
+  - name: test/SimpleBankSystemTest.java
+    visible: false
+    learner_created: false
+  - name: card.s3db
+    visible: true
+    is_binary: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/8428#comment
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Mon, 14 Apr 2025 02:05:28 UTC"
+record: 3

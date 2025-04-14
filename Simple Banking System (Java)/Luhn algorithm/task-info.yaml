@@ -1,0 +1,32 @@
+type: edu
+files:
+  - name: src/banking/Main.java
+    visible: true
+    learner_created: false
+  - name: src/banking/data_models/Account.java
+    visible: true
+    learner_created: false
+  - name: src/banking/manager/BankingSystem.java
+    visible: true
+    learner_created: false
+  - name: src/banking/ui/MainUI.java
+    visible: true
+    learner_created: false
+  - name: src/banking/CardNumberGenerator.java
+    visible: true
+    learner_created: false
+  - name: src/banking/generators/PinGenerator.java
+    visible: true
+    learner_created: false
+  - name: test/SimpleBankSystemTest.java
+    visible: false
+    learner_created: false
+  - name: src/banking/generators/CardNumberGenerator.java
+    visible: true
+    learner_created: true
+  - name: src/banking/validator/LuhnAlgorithm.java
+    visible: true
+    learner_created: true
+feedback_link: https://hyperskill.org/learn/step/8426#comment
+status: Solved
+record: 1
